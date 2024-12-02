@@ -1,0 +1,113 @@
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+body {
+  background-color: $body-background;
+  font-family: 'Roboto', sans-serif;
+
+  header {
+    @include flexContainer($items: center, $gap: 29px);
+    padding: 21px 0;
+
+    nav {
+      ul {
+        @include flexContainer($gap: 35px);
+
+        li {
+          font-size: 15px;
+          font-weight: 700;
+        }
+      }
+
+      @media only screen and (max-width: 700px) {
+        display: none;
+      }
+    }
+
+    .fa-arrow-right {
+      display: none;
+      font-size: 25px;
+
+      @media only screen and (max-width: 700px) {
+        display: block;
+      }
+    }
+  }
+}
+
+.container {
+  @include container;
+}
+
+section {
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 27px;
+  }
+
+  .cards {
+    @include flexContainer($justify: space-between, $items: center);
+
+    .card {
+      height: 350px;
+      width: 362px;
+      background-color: white;
+
+      .img {
+        background-image: url('../images/card-img.jpg');
+        height: 186px;
+        width: 100%;
+        color: white;
+        padding-top: 32px;
+        padding-left: 41px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+      }
+
+      p {
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 20px;
+        color: #8a8787;
+      }
+
+      & > p {
+        width: 238px;
+        margin-top: 68px;
+        margin-left: 37px;
+
+        @media only screen and (max-width: 1250px) {
+          width: 150px;
+          margin-top: 50px;
+        }
+      }
+
+      .card_footer {
+        margin-left: 37px;
+        margin-top: 11px;
+        @include flexContainer($items: center, $gap: 11px);
+      }
+
+      @media only screen and (max-width: 1250px) {
+        width: 300px;
+      }
+
+      @media only screen and (max-width: 1250px) {
+        width: 250px;
+      }
+
+      @media only screen and (max-width: 865px) {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media only screen and (max-width: 865px) {
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@mixin container {
+  max-width: 1250px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: $body-background;
+}
+
+@mixin flexContainer($justify: flex-start, $items: flex-start, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $items;
+  gap: $gap;
+}
